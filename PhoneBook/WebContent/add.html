@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background: #FFF68F;
+}
+form{
+	margin:5% 35% auto 35%;
+	font-size:20px;
+}
+#addcontacts{
+	text-align:center;
+}
+form input{
+	margin:auto auto 10px auto;
+	width:80%;
+	font-size:20px;
+}
+.sex{
+	width:10px;
+}
+#btnaddcontacts{
+	width:90%;
+}
+</style>
+</head>
+<body>
+	<form action="ContactsAddServlet" method="post">
+		<p id="addcontacts">添加联系人</p>
+		姓名:<input type="text" name="name"><br>
+		<br> 地址:<input type="text" name="address"><br>
+		<br> 电话:<input type="text" name="mobile"><br>
+		<br> Q Q:<input type="text" name="qq"><br>
+		<br> 微信:<input type="text" name="wechat"><br>
+		<br> 学校:<input type="text" name="school"><br>
+		<br> 性别:<input type="radio" name="sex" value="男" class="sex">男 <input
+			type="radio" name="sex" value="女" class="sex">女 <br><br>
+		<input type="submit" name="submit" value="点击添加" id="btnaddcontacts">
+	</form>
+</body>
+</html>

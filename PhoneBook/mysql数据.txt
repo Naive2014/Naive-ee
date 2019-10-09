@@ -1,0 +1,39 @@
+CREATE TABLE users(
+	id INT NOT NULL AUTO_INCREMENT,
+	username VARCHAR(30) NOT NULL,
+	address VARCHAR(30),
+	mobile VARCHAR(30),
+	name VARCHAR(30),
+	qq VARCHAR(30),
+	wechat VARCHAR(30),
+	email VARCHAR(30),
+	password VARCHAR(30) NOT NULL,
+	PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE contacts(
+	id INT NOT NULL AUTO_INCREMENT,
+	pid INT,
+	name VARCHAR(30) NOT NULL,
+	address VARCHAR(30),
+	mobile VARCHAR(30),
+	qq VARCHAR(30),
+	wechat VARCHAR(30),
+	school VARCHAR(60),
+	sex VARCHAR(5),
+	PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO users()
+	VALUES
+ 	(1,'zhangsan','','','','','','','123456');
+
+desc users;
+
+select * from users;
+
+UPDATE users set password='189219';
+
+delete from users where id=1;
+
+desc users;
