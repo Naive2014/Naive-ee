@@ -16,6 +16,7 @@ import Naive1009.BookDaoImpl;
 /**
  * 
  *	test的servlet
+ * 直接运行这个servlet
  * @author Naive
  * @date 2019年10月10日
  */
