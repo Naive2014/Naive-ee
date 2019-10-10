@@ -18,9 +18,17 @@
   PRIMARY KEy(id)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8;
   
+  select database();
+  
   drop table book; 
   
-  INSERT INTO book (001,'格林童话',5,'文献');
+  INSERT INTO book() VALUES(001,'格林童话',5,'文献');
   
+  delete from book where id=?;
   
+  select * from book;
+  
+  select * from book where id=?;
+  
+  update book set bookName=?,price=?,description=? where id=?;
   
