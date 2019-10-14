@@ -1,33 +1,29 @@
-package Servlet;
+package com.skishop.servlets.product;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.jws.WebService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import Naive1009.Book;
-import Naive1009.BookDaoImpl;
+import com.skishop.daoimpl.product.ProductDao;
+import com.skishop.entity.Product;
 
 /**
- * 
- *	test的servlet
- * 直接运行这个servlet
- * @author Naive
- * @date 2019年10月10日
+ * Servlet implementation class ProductListServlet
  */
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/ProductListServlet")
+public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TestServlet() {
+    public ProductListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,17 +32,10 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		
-		HttpSession session = request.getSession();
-		BookDaoImpl bookDaoImpl = new BookDaoImpl();
-		ArrayList<Book> arrayList = bookDaoImpl.BookSelect();
-		session.setAttribute("arrayList", arrayList);
-		request.setAttribute("num", arrayList.size());
-		session.setMaxInactiveInterval(0);
-		request.getRequestDispatcher("test.jsp").forward(request, response);
+		ProductDao pd=new ProductDao();
+		ArrayList<Product> list=pd.findAll();
+		request.setAttribute("products", list);
+		request.getRequestDispatcher("shop.jsp").forward(request, response);
 	}
 
 	/**
