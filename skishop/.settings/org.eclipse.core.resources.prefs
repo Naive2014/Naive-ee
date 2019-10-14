@@ -2,3 +2,5 @@ eclipse.preferences.version=1
 encoding//WebContent/login.jsp=UTF-8
 encoding//WebContent/register.jsp=UTF-8
 encoding//WebContent/single.jsp=UTF-8
+encoding//src/com/skishop/entity/CartItem.java=UTF-8
+encoding/<project>=UTF-8
