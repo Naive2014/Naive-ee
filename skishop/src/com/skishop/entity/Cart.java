@@ -6,9 +6,8 @@ import java.util.Map.Entry;
 
 /**
  * 购物车类
- * @author anneli
- * @date 2019年10月14日 下午3:02:09 
- *
+ * @author Naive
+ * @date: 2019年10月16日 上午11:14:06
  */
 public class Cart {
 	private Map<Integer, CartItem> map = new HashMap<Integer, CartItem>();
@@ -42,7 +41,7 @@ public class Cart {
 			map.get(product.getId()).setCount(count+1);//数量+1
 		}
 		else {
-			CartItem cartItem = new CartItem(product,1,0);//初始化购物项
+			CartItem cartItem = new CartItem(product,1);//初始化购物项
 			map.put(product.getId(), cartItem);
 		}
 	}

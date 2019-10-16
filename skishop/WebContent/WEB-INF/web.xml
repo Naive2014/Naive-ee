@@ -10,11 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>ProductListServlet</servlet-name>
-  	<servlet-class>com.skishop.servlets.product.ProductListServlet</servlet-class>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>com.skishop.servlets.product.ProductListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ProductListServlet</servlet-name>
-  	<url-pattern>/productlist</url-pattern>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/productlist</url-pattern>
   </servlet-mapping>
 </web-app>

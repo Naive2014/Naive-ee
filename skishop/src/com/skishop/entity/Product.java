@@ -1,13 +1,32 @@
 package com.skishop.entity;
-
+/**
+ * 商品实体类
+ * @author Naive
+ * @date: 2019年10月16日 上午11:14:28
+ */
 public class Product {
-	
 	private int id;
 	private String name;
 	private String description;
 	private String listimg;
-	private int prince;
-	private int discountprince;
+	private int price;
+	private int discountprice;
+	
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Product(int id, String name, String description, String listimg, int price, int discountprice) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.listimg = listimg;
+		this.price = price;
+		this.discountprice = discountprice;
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -32,17 +51,17 @@ public class Product {
 	public void setListimg(String listimg) {
 		this.listimg = listimg;
 	}
-	public int getPrince() {
-		return prince;
+	public int getprice() {
+		return price;
 	}
-	public void setPrince(int prince) {
-		this.prince = prince;
+	public void setprice(int price) {
+		this.price = price;
 	}
-	public int getDiscountprince() {
-		return discountprince;
+	public int getDiscountprice() {
+		return discountprice;
 	}
-	public void setDiscountprince(int discountprince) {
-		this.discountprince = discountprince;
+	public void setDiscountprice(int discountprice) {
+		this.discountprice = discountprice;
 	}
 	
 }

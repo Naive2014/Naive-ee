@@ -11,7 +11,13 @@
 <body>
  <h1 align="center">购物车列表</h1>
    <c:if test="${empty(cart.map) }"> 
-        您还没购任何商品
+    <table border="3" align="center">
+   		<tr>
+   			<td> 您还没购任何商品</td>
+    		<td colspan="1"><a href="ProductListServlet">返回商品页</a></td>
+    	</tr>
+    </table>
+       
    </c:if>
    <c:if test="${!empty(cart.map) }"> 
        <table border="3" align="center">
@@ -30,24 +36,16 @@
        	     <td>${entry.value.product.discountprice}</td>
        	     <td><input type="text" name="count" value="${entry.value.count}" style="width: 50"/></td>
        	     <td>${entry.value.price}</td>
-       	     <td><a href="deleteItem?id=${entry.value.product.id}">删除</a></td>
+       	     <td><a href="DelItemServlet?id=${entry.value.product.id}">删除</a></td>
        	  </tr> 
        	  </c:forEach>
        	  
        	  <tr>
-       	  	  <td colspan="3">总价</td>
-       	     <td colspan="2">${cart.price}</td>
-       	     <td colspan="1"><a href="clearCart">清空购物车</a></td> 
-       	  
+       	  	 <td colspan="3">总价</td>
+       	     <td colspan="1">${cart.price}</td>
+       	     <td colspan="1"><a href="ClearCartServlet">清空购物车</a></td> 
+       	  	 <td colspan="1"><a href="ProductListServlet">返回商品页</a></td> 
        	  </tr>
-       
-       
-       
-       
-       
-       
-       
-       
        </table>
    </c:if>
 </body>

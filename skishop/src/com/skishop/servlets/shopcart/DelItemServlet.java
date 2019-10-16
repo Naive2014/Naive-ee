@@ -1,30 +1,31 @@
-package com.skishop.servlets.product;
+package com.skishop.servlets.shopcart;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.skishop.daoimpl.product.ProductDao;
-import com.skishop.entity.Product;
+import com.skishop.entity.Cart;
+import com.skishop.entity.CartItem;
 
 /**
- * 获取商品的servlet
+ * 删除购物车商品的servlet
  * @author Naive
- * @date: 2019年10月16日 上午11:11:49
+ * @date: 2019年10月16日 上午11:13:36
  */
-@WebServlet("/ProductListServlet")
-public class ProductListServlet extends HttpServlet {
+@WebServlet("/DelItemServlet")
+public class DelItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductListServlet() {
+    public DelItemServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,10 +38,15 @@ public class ProductListServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
-		ProductDao pd=new ProductDao();
-		ArrayList<Product> list=pd.findAll();
-		request.setAttribute("products", list);
-		request.getRequestDispatcher("shop.jsp").forward(request, response);
+		int id = Integer.valueOf(request.getParameter("id"));
+		HttpSession session = request.getSession();
+		Cart cart = (Cart)session.getAttribute("cart");
+		Map<Integer, CartItem> map = cart.getMap();
+		map.remove(id);
+		cart.setMap(map);
+		session.setAttribute("cart", cart);
+		request.getRequestDispatcher("showcart.jsp").forward(request, response);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

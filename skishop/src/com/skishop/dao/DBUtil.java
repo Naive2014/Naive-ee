@@ -2,7 +2,11 @@ package com.skishop.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+/**
+ * 数据库连接
+ * @author Naive
+ * @date: 2019年10月16日 上午11:15:11
+ */
 public class DBUtil {
 	static{
 		try{

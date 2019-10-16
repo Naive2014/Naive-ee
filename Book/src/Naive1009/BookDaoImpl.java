@@ -15,7 +15,6 @@ import java.util.Random;
 public class BookDaoImpl implements BookDao {
 	private Connection connection;
 	public BookDaoImpl() {
-		// TODO Auto-generated constructor stub
 		try {
 			Class.forName(dbdriver);
 			this.connection =DriverManager.getConnection(dburl,dbusername,dbpassword);

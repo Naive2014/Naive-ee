@@ -8,19 +8,19 @@ package com.skishop.entity;
  *
  */
 public class CartItem {
+	private Product product;// 商品
+	private int count;// 商品数量
+	private int price;// 总价
+	
 	public CartItem() {
 	}
 
-	public CartItem(Product product, int count, int price) {
+	public CartItem(Product product, int count) {
 		super();
 		this.product = product;
 		this.count = count;
-		this.price = this.product.getDiscountprince() * count;
+		this.price = this.product.getDiscountprice()* count;
 	}
-
-	private Product product;// 商品
-	private int count;// 商品数量
-	private int price;// 商品价格
 
 	public Product getProduct() {
 		return product;
@@ -35,7 +35,7 @@ public class CartItem {
 	}
 
 	public void setCount(int count) {
-		this.price = this.product.getDiscountprince() * count;
+		this.price = this.product.getDiscountprice() * count;
 		this.count = count;
 		
 	}

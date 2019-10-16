@@ -124,10 +124,10 @@
 					<div class="shop_desc">
 						<h3><a href="#">${p.name }</a></h3>
 						<p>${p.description } </p>
-						<span class="reducedfrom">${p.prince}</span>
-						<span class="actual">${p.discountprince}</span><br>
+						<span class="reducedfrom">${p.price}</span>
+						<span class="actual">${p.discountprice}</span><br>
 						<ul class="buttons">
-							<li class="cart"><a href="#">加入购物车</a></li>
+							<li class="cart"><a href="CartAddServlet?id=${p.id}">加入购物车</a></li>
 							<li class="shop_btn"><a href="single.html">了解更多</a></li>
 							<div class="clear"> </div>
 					    </ul>
