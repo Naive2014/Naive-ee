@@ -21,4 +21,16 @@ public interface Productdao {
 	 * @return 查询到的商品
 	 */
 	public Product QueryProduct(int id);
+	/**
+	 * 分页操作
+	 * @param pageNum 起始商品
+	 * @param pageSize 单页中的商品数量
+	 * @return
+	 */
+	public ArrayList<Product> FindProuctPage(int pageNum, int pageSize);
+	/**
+	 * 查找总条数
+	 * @return 总条数
+	 */
+	public int findCount();
 }

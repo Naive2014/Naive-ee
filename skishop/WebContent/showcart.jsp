@@ -14,7 +14,7 @@
     <table border="3" align="center">
    		<tr>
    			<td> 您还没购任何商品</td>
-    		<td colspan="1"><a href="ProductListServlet">返回商品页</a></td>
+    		<td colspan="1"><a href="PageServlet">返回商品页</a></td>
     	</tr>
     </table>
        
@@ -44,7 +44,7 @@
        	  	 <td colspan="3">总价</td>
        	     <td colspan="1">${cart.price}</td>
        	     <td colspan="1"><a href="ClearCartServlet">清空购物车</a></td> 
-       	  	 <td colspan="1"><a href="ProductListServlet">返回商品页</a></td> 
+       	  	 <td colspan="1"><a href="PageServlet">返回商品页</a></td> 
        	  </tr>
        </table>
    </c:if>

@@ -51,14 +51,14 @@
 			  <div class="col-md-12">
 				 <div class="header-left">
 					 <div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""/></a>
+						<a href="index.jsp"><img src="images/logo.png" alt=""/></a>
 					 </div>
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
-						    	<li><a href="ProductListServlet">商店</a></li>
-								<li><a href="experiance.html">经验交流</a></li>
-								<li><a href="contact.html">联系我们</a></li>								
+						    	<li><a href="PageServlet">商店</a></li>
+								<li><a href="experiance.jsp">经验交流</a></li>
+								<li><a href="contact.jsp">联系我们</a></li>								
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
@@ -112,7 +112,7 @@
       <div class="shop_top">
 		<div class="container">
 			<div class="row shop_box-top">
-				<c:forEach items="${products }" var="p">
+				<c:forEach items="${page.list }" var="p">
 				<div class="col-md-3 shop_box"><a href="single.html">
 					<img src="images/${p.listimg }" class="img-responsives" alt=""/>
 					<span class="new-box">
@@ -135,6 +135,11 @@
 				</a></div>
 				</c:forEach>
 			</div>
+				<a href="PageServlet?pagenum=1">首页</a>
+				<a href="PageServlet?pagenum=${page.prePageNum}">上一页</a>
+				第<span>${page.pageNum}</span>页
+				<a href="PageServlet?pagenum=${page.nextPageNum}">下一页</a>
+				<a href="PageServlet?pagenum=${page.totalPageNum}">尾页</a>
 		 </div>
 	   </div>
 	  </div>

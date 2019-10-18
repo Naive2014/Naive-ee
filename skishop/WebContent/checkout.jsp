@@ -51,14 +51,14 @@
 			  <div class="col-md-12">
 				 <div class="header-left">
 					 <div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""/></a>
+						<a href="index.jsp"><img src="images/logo.png" alt=""/></a>
 					 </div>
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
-						    	<li><a href="ProductListServlet">商店</a></li>
-								<li><a href="experiance.html">经验交流</a></li>
-								<li><a href="contact.html">联系我们</a></li>								
+						    	<li><a href="PageServlet">商店</a></li>
+								<li><a href="experiance.jsp">经验交流</a></li>
+								<li><a href="contact.jsp">联系我们</a></li>								
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
@@ -112,7 +112,7 @@
       <div class="shop_top">
 		<div class="container">
 			<h4 class="title">购物车是空的</h4>
-			<p class="cart">您的购物车中没有商品<br>点击<a href="index.html"> 这里</a> 继续购物</p>
+			<p class="cart">您的购物车中没有商品<br>点击<a href="index.jsp"> 这里</a> 继续购物</p>
 	     </div>
 	   </div>
 	  </div>

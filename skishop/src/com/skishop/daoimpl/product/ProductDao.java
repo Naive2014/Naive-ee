@@ -45,7 +45,7 @@ public class ProductDao implements Productdao{
 		try {
 			PreparedStatement pstm=this.con.prepareStatement(QueryProductsql);
 			pstm.setInt(1, id);
-			ResultSet rSet=pstm.executeQuery();
+			ResultSet rSet = pstm.executeQuery();
 			if (rSet.next()) {
 				Product product = new Product(rSet.getInt("id"),
 						rSet.getString("name"),
@@ -59,6 +59,46 @@ public class ProductDao implements Productdao{
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public ArrayList<Product> FindProuctPage(int pageNum, int pageSize) {
+		String FindProuctPagesql = "select * from product limit ?,?";
+		try {
+			PreparedStatement pstm=this.con.prepareStatement(FindProuctPagesql);
+			pstm.setInt(1, (pageNum-1)*pageSize);
+			pstm.setInt(2, pageSize);
+			ResultSet rSet = pstm.executeQuery();
+			ArrayList<Product> arrayList = new ArrayList<>();
+			while (rSet.next()) {
+				Product product = new Product(rSet.getInt("id"),
+						rSet.getString("name"),
+						rSet.getString("description"),
+						rSet.getString("listimg"),
+						rSet.getInt("price"),
+						rSet.getInt("discountprice"));
+				arrayList.add(product);
+			}
+			return arrayList;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public int findCount() {
+		String findCountsql = "select count(*) from product";
+		try {
+			PreparedStatement pstm=this.con.prepareStatement(findCountsql);
+			ResultSet rSet = pstm.executeQuery();
+			if (rSet.next()) {
+				return rSet.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 

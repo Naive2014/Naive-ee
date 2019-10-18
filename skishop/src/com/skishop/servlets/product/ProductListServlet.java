@@ -13,7 +13,7 @@ import com.skishop.daoimpl.product.ProductDao;
 import com.skishop.entity.Product;
 
 /**
- * 获取商品的servlet
+ * 获取全部商品的servlet
  * @author Naive
  * @date: 2019年10月16日 上午11:11:49
  */
@@ -39,7 +39,7 @@ public class ProductListServlet extends HttpServlet {
 		
 		ProductDao pd=new ProductDao();
 		ArrayList<Product> list=pd.findAll();
-		request.setAttribute("products", list);
+		request.setAttribute("page", list);
 		request.getRequestDispatcher("shop.jsp").forward(request, response);
 	}
 

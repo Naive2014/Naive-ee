@@ -51,14 +51,14 @@
 			  <div class="col-md-12">
 				 <div class="header-left">
 					 <div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""/></a>
+						<a href="index.jsp"><img src="images/logo.png" alt=""/></a>
 					 </div>
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
-						    	<li><a href="ProductListServlet">商店</a></li>
-						    	<li><a href="experiance.html">经验交流</a></li>
-								<li><a href="contact.html">联系我们</a></li>							
+						    	<li><a href="PageServlet">商店</a></li>
+						    	<li><a href="experiance.jsp">经验交流</a></li>
+								<li><a href="contact.jsp">联系我们</a></li>							
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
